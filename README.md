@@ -9,11 +9,11 @@ The primary goal is to transform raw CSV data into a structured format suitable 
 Develop a modern data warehouse using SQL Server to consolidate sales data for analytical reporting. 
   
 ### Specifications / Architecture Overview
--- Data Sources: Import data from two systems (ERP and CRM) as CSV files.
--- Data Quality: Cleanse and resolve data quality issues prior to analysis.
--- Integration: Combine both sources into a single, user-friendly data model designed for analytical queries.
--- Scope: Latest dataset only; no historization.
--- Documentation: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+-- **Data Sources:** Import data from two systems (ERP and CRM) as CSV files.
+-- **Data Quality:** Cleanse and resolve data quality issues prior to analysis.
+-- **Integration:** Combine both sources into a single, user-friendly data model designed for analytical queries.
+-- **Scope:** Latest dataset only; no historization.
+-- **Documentation:** Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
 ### BI: Analytics & Reporting 
 
