@@ -54,7 +54,7 @@ BEGIN
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> --------------';
 
-		SET @end_time = GETDATE();
+		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.crm_sales_details';
 		TRUNCATE TABLE bronze.crm_sales_details;
 
@@ -74,7 +74,7 @@ BEGIN
 		PRINT 'Loading ERP Tables';
 		PRINT '---------------------';
 
-		SET @end_time = GETDATE();
+		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_cust_az12';
 		TRUNCATE TABLE bronze.erp_cust_az12;
 
@@ -90,7 +90,7 @@ BEGIN
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> --------------';
 
-		SET @end_time = GETDATE();
+		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_loc_a101';
 		TRUNCATE TABLE bronze.erp_loc_a101;
 
@@ -106,7 +106,7 @@ BEGIN
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '>> --------------';
 
-		SET @end_time = GETDATE();
+		SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: bronze.erp_px_cat_g1v2';
 		TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 
