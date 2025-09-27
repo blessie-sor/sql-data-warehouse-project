@@ -17,7 +17,8 @@ Each entry includes metadata about the dataset, such as field names, data types,
   - **Fact views** store measurable business events (e.g., sales, transactions)
   - **Dimension views** provide descriptive attributes (e.g., customer, product, date)
   
----
+
+  
 
 ### Subject Area: Sales
 
@@ -37,6 +38,7 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `create_date`    | DATE         | No       | Date when the customer's record was created in the system                            | `2025-10-06`    | Low         |
 
 **Source(s):** silver.crm_cust_info, silver.erp_cust_az12, silver.erp_loc_a101
+
 **Purpose:** Provides customer demographic and geographic data for sales. 
 
 
@@ -55,6 +57,7 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `price`          | INTEGER      | No       | Price per unit of the product for the line item, in whole currency units             | `3375`          | Medium      |
 
 **Source(s):** silver.crm_sales_details, silver.crm_prd_info, silver.crm_cust_info
+
 **Purpose:** Provides detailed sales transaction data for revenue analysis and reporting. 
 
 
@@ -78,7 +81,9 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `start_date`     | DATE         | No       | Date when the product became available for sale or use                               | `2013-07-01`    | Medium      |
 
 **Source(s):** silver.crm_prd_info, silver.erp_px_cat_g1v2
-**Purpose:** Provides detailed sales transaction data for revenue analysis and reporting. 
+
+**Purpose:** Provides detailed sales transaction data for revenue analysis and reporting.   
+
 
 
 
