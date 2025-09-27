@@ -9,8 +9,6 @@ Each entry includes metadata about the dataset, such as field names, data types,
 ### Purpose
 - Serve as a trusted source of business-ready data
 - Improve usability and discoverability of key datasets
-  
----
 
 ### Architecture
 
@@ -38,10 +36,9 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `birth_date`     | DATE         | Yes      | Customer's date of birth, formatted as YYYY-MM-DD                                    | `1971-10-06`    | High        |
 | `create_date`    | DATE         | No       | Date when the customer's record was created in the system                            | `2025-10-06`    | Low         |
 
-#### Source(s): silver.crm_cust_info, silver.erp_cust_az12, silver.erp_loc_a101
-#### Purpose: Provides customer demographic and geographic data for sales. 
+**Source(s):** silver.crm_cust_info, silver.erp_cust_az12, silver.erp_loc_a101
+**Purpose:** Provides customer demographic and geographic data for sales. 
 
----
 
 #### View: gold.fact_sales
 
@@ -57,10 +54,10 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `quantity`       | INTEGER      | No       | Number of units of the product ordered for the line item                             | `1`             | Low         |
 | `price`          | INTEGER      | No       | Price per unit of the product for the line item, in whole currency units             | `3375`          | Medium      |
 
-#### Source(s): silver.crm_sales_details, silver.crm_prd_info, silver.crm_cust_info
-#### Purpose: Provides detailed sales transaction data for revenue analysis and reporting. 
+**Source(s):** silver.crm_sales_details, silver.crm_prd_info, silver.crm_cust_info
+**Purpose:** Provides detailed sales transaction data for revenue analysis and reporting. 
 
----
+
 
 ### Subject Area: Product
 
@@ -80,8 +77,10 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `product_line`   | NVARCHAR(50) | Yes      | Product line or series to which the product belongs                                  | `Other Sales`   | Low         |
 | `start_date`     | DATE         | No       | Date when the product became available for sale or use                               | `2013-07-01`    | Medium      |
 
-#### Source(s): silver.crm_prd_info, silver.erp_px_cat_g1v2
-#### Purpose: Provides detailed sales transaction data for revenue analysis and reporting. 
+**Source(s):** silver.crm_prd_info, silver.erp_px_cat_g1v2
+**Purpose:** Provides detailed sales transaction data for revenue analysis and reporting. 
+
+
 
 
 **Note:** Although stored as views, these datasets are treated as logical tables in the data model and should be used accordingly. Follow data privacy and access control policies when working with sensitive fields.
