@@ -1,18 +1,18 @@
-# Gold Layer Data Catalog
+## Gold Layer Data Catalog
 
-## Overview
+### Overview
 This document provides a detailed catalog of the **Gold Layer** datasets, which are modeled using **fact and dimension views** to support reporting, analytics, and business intelligence use cases.
 
 The Gold Layer contains **curated, cleaned, and joined data** from upstream layers (Bronze and Silver), and is organized into **semantic views** that follow a star schema.
 Each entry includes metadata about the dataset, such as field names, data types, nullability, description, and sensitivity.
 
-## Purpose
+### Purpose
 - Serve as a trusted source of business-ready data
 - Improve usability and discoverability of key datasets
   
 ---
 
-## Architecture
+### Architecture
 
 - Datasets are implemented as **views**, not physical tables
 - Follows a **dimensional modeling** structure:
@@ -21,9 +21,9 @@ Each entry includes metadata about the dataset, such as field names, data types,
   
 ---
 
-## Subject Area: Sales
+### Subject Area: Sales
 
-### View: gold.dim_customers
+#### View: gold.dim_customers
 
 | Field Name       | Data Type    | Nullable | Description                                                                          | Example         | Sensitivity |
 |------------------|--------------|----------|--------------------------------------------------------------------------------------|-----------------|-------------|
@@ -38,12 +38,12 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `birth_date`     | DATE         | Yes      | Customer's date of birth, formatted as YYYY-MM-DD                                    | `1971-10-06`    | High        |
 | `create_date`    | DATE         | No       | Date when the customer's record was created in the system                            | `2025-10-06`    | Low         |
 
-### Source(s): silver.crm_cust_info, silver.erp_cust_az12, silver.erp_loc_a101
-### Purpose: Provides customer demographic and geographic data for sales. 
+#### Source(s): silver.crm_cust_info, silver.erp_cust_az12, silver.erp_loc_a101
+#### Purpose: Provides customer demographic and geographic data for sales. 
 
 ---
 
-### View: gold.fact_sales
+#### View: gold.fact_sales
 
 | Field Name       | Data Type    | Nullable | Description                                                                          | Example         | Sensitivity |
 |------------------|--------------|----------|--------------------------------------------------------------------------------------|-----------------|-------------|
@@ -57,14 +57,14 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `quantity`       | INTEGER      | No       | Number of units of the product ordered for the line item                             | `1`             | Low         |
 | `price`          | INTEGER      | No       | Price per unit of the product for the line item, in whole currency units             | `3375`          | Medium      |
 
-### Source(s): silver.crm_sales_details, silver.crm_prd_info, silver.crm_cust_info
-### Purpose: Provides detailed sales transaction data for revenue analysis and reporting. 
+#### Source(s): silver.crm_sales_details, silver.crm_prd_info, silver.crm_cust_info
+#### Purpose: Provides detailed sales transaction data for revenue analysis and reporting. 
 
 ---
 
-## Subject Area: Product
+### Subject Area: Product
 
-### View: gold.dim_products
+#### View: gold.dim_products
 
 | Field Name       | Data Type    | Nullable | Description                                                                          | Example         | Sensitivity |
 |------------------|--------------|----------|--------------------------------------------------------------------------------------|-----------------|-------------|
@@ -80,8 +80,8 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `product_line`   | NVARCHAR(50) | Yes      | Product line or series to which the product belongs                                  | `Other Sales`   | Low         |
 | `start_date`     | DATE         | No       | Date when the product became available for sale or use                               | `2013-07-01`    | Medium      |
 
-### Source(s): silver.crm_prd_info, silver.erp_px_cat_g1v2
-### Purpose: Provides detailed sales transaction data for revenue analysis and reporting. 
+#### Source(s): silver.crm_prd_info, silver.erp_px_cat_g1v2
+#### Purpose: Provides detailed sales transaction data for revenue analysis and reporting. 
 
 
 **Note:** Although stored as views, these datasets are treated as logical tables in the data model and should be used accordingly. Follow data privacy and access control policies when working with sensitive fields.
