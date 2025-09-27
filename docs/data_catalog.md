@@ -56,7 +56,7 @@ Each entry includes metadata about the dataset, such as field names, data types,
 | `quantity`       | INTEGER      | No       | Number of units of the product ordered for the line item                             | `1`             | Low         |
 | `price`          | INTEGER      | No       | Price per unit of the product for the line item, in whole currency units             | `3375`          | Medium      |
 
-**Source(s):** silver.crm_sales_details, silver.crm_prd_info, silver.crm_cust_info
+**Source(s):** silver.crm_sales_details
 
 **Purpose:** Provides detailed sales transaction data for revenue analysis and reporting. 
 
