@@ -6,7 +6,7 @@ The solution transforms raw CSV data from operational systems into structured da
 
 The warehouse follows a **Medallion Architecture (Bronze / Silver / Gold)** to ensure data quality, maintainability, and scalability.
 
----
+
 
 ## Business Problem
 Sales data is distributed across multiple operational systems, making it difficult for business and analytics teams to:
@@ -16,7 +16,7 @@ Sales data is distributed across multiple operational systems, making it difficu
 
 This project addresses these challenges by integrating ERP and CRM data into a unified model designed for reporting and insights.
 
----
+
 
 ## Architecture Overview
 
@@ -32,14 +32,14 @@ This project addresses these challenges by integrating ERP and CRM data into a u
 - **Silver Layer** – Cleansed and standardized data with data quality rules applied  
 - **Gold Layer** – Business-ready fact and dimension views implementing a **star schema** for analytics
 
----
+
 
 ## Data Modeling
 The warehouse is designed using a dimensional modeling approach to support analytical queries efficiently.
 
 - **Fact View**
   - Sales transactions
-- **Dimension Tables**
+- **Dimension Views**
   - Customers
   - Products
 
@@ -48,7 +48,7 @@ The star schema design:
 - Improves query performance
 - Provides consistent metric definitions across reporting use cases
 
----
+
 
 ## Data Quality & Transformation
 To ensure reliable analytics, the following data quality steps are applied:
@@ -57,7 +57,7 @@ To ensure reliable analytics, the following data quality steps are applied:
 - Standardization of keys and formats
 - Validation of referential integrity between fact and dimension data
 
----
+
 
 ## ETL Process
 1. **Extract**
@@ -70,7 +70,7 @@ To ensure reliable analytics, the following data quality steps are applied:
 3. **Load**
    - Populate analytics-ready fact and dimension views in the Gold layer
 
----
+
 
 ## Analytics & Reporting
 The Gold layer supports SQL-based analytics for:
@@ -78,8 +78,8 @@ The Gold layer supports SQL-based analytics for:
 - **Customer Behavior**
 - **Product Performance**
 - **Sales Trends**
-- 
----
+
+
 
 ## Documentation
 - Data model documentation
@@ -87,7 +87,7 @@ The Gold layer supports SQL-based analytics for:
 - Table and column definitions
 - Business metric descriptions
 
----
+
 
 ## Technologies Used
 - SQL Server
