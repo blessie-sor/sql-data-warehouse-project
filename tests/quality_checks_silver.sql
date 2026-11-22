@@ -71,7 +71,7 @@ WHERE sls_due_dt <= 0
 
 -- Check for invalid values (negative, zero, null, incorrect sales calculation)
 SELECT  
-	sls_sales
+	sls_sales,
 	sls_quantity, 
 	sls_price
 FROM silver.crm_sales_details
