@@ -73,7 +73,7 @@ SELECT
 		total_orders,
 	total_sales,
 	total_quantity,
-	total_products,
+	COUNT(DISTINCT product_key) AS total_products,
 	lifespan_month,
 	-- Compute average order value (AVO) -> total sales / total orders 
 	CASE WHEN total_orders = 0 THEN 0 -- to not divide by zero
