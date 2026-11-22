@@ -17,8 +17,9 @@ Highlights:
 		- average monthly spend
 */
 
-WITH base_query AS (
+CREATE VIEW gold.report_customers AS
 -- 1. Base Query: Retrieves core columns from tables
+WITH base_query AS (
 SELECT 
 	s.order_number,
 	s.product_key, 
