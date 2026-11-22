@@ -16,7 +16,7 @@ Usage:
 SELECT customer_key, COUNT(*)
 FROM gold.dim_customers
 GROUP BY customer_key
-WHERE COUNT(*) > 1;
+HAVING COUNT(*) > 1;
 
 -- Check gold.dim_products
 
