@@ -21,7 +21,7 @@ GROUP BY DATETRUNC(month, order_date)
 SELECT 
   order_date,
   total_sales,
-  SUM(total_sales) OVER (PARTITION BY order_date ORDER BY order_date) AS running_total_sales,
+  SUM(total_sales) OVER (ORDER BY order_date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total_sales,
   AVG(avg_price) OVER (ORDER BY order_date) AS moving_average_price
 FROM (
   SELECT 
