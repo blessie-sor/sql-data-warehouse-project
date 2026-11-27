@@ -134,6 +134,7 @@ BEGIN
 		PRINT 'Error Message' + ERROR_MESSAGE();
 		PRINT 'Error Number' + CAST(ERROR_NUMBER() AS NVARCHAR);
 		PRINT 'Error State' + CAST(ERROR_STATE() AS NVARCHAR);
-		PRINT '=========================================='
+		PRINT '==========================================';
+		THROW;
 	END CATCH
 END
